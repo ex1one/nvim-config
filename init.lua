@@ -1,23 +1,28 @@
+-- Добавляем путь к вашим Lua модулям
+local config_path = vim.fn.stdpath("config") .. "/lua/?.lua"
+local config_path2 = vim.fn.stdpath("config") .. "/lua/?/init.lua"
+package.path = package.path .. ";" .. config_path .. ";" .. config_path2
+
 -- https://www.youtube.com/watch?v=Q1gIbPEStL0&t=725s Брал отсюда сборку
 
 -- Basic
-require('core.plugins')
-require('core.mappings')
-require('core.colors')
-require('core.configs')
+require("core.plugins")
+require("core.mappings")
+require("core.colors")
+require("core.configs")
 
 -- Plugins
-require('plugins.neotree')
- -- require('plugins.treesitter') Для того, чтобы он работал, нужно установить какой-т компилятор...
-require('plugins.lsp')
-require('plugins.cmp')
-require('plugins.mason')
-require('plugins.telescope')
-require('plugins.null-ls')
-require('plugins.autopairs')
-require('plugins.autotag')
-require('plugins.buffline')
-require('plugins.comments')
-require('plugins.gitsigns')
-require('plugins.toggleterm')
-require('plugins.whichkey') -- Возможно это не работает
+require("plugins.neotree")
+require("plugins.treesitter")
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.mason")
+require("plugins.telescope")
+require("plugins.null-ls")
+require("plugins.autopairs")
+require("plugins.autotag")
+require("plugins.buffline")
+require("plugins.comments")
+require("plugins.gitsigns")
+require("plugins.toggleterm")
+require("plugins.whichkey")

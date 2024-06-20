@@ -1,8 +1,10 @@
-require("toggleterm").setup {open_mapping = [[<c-\>]]}
+require("toggleterm").setup {
+    open_mapping = [[<c-\>]]
+}
 
 function _G.set_terminal_keymaps()
     local opts = {buffer = 0}
-    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts) -- Прочие ваши настройки keymap
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
     vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
@@ -12,3 +14,6 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+-- Настройка комбинации пробел + t + f для открытия терминала
+vim.api.nvim_set_keymap('n', '<leader>t', '<Cmd>ToggleTerm<CR>', {noremap = true, silent = true})
