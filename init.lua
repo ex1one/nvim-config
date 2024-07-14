@@ -1,8 +1,3 @@
--- Добавляем путь к вашим Lua модулям
-local config_path = vim.fn.stdpath("config") .. "/lua/?.lua"
-local config_path2 = vim.fn.stdpath("config") .. "/lua/?/init.lua"
-package.path = package.path .. ";" .. config_path .. ";" .. config_path2
-
 -- https://www.youtube.com/watch?v=Q1gIbPEStL0&t=725s Брал отсюда сборку
 
 -- Basic
